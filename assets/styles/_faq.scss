@@ -1,0 +1,160 @@
+ .accordions .accordion-item {
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title {
+    cursor: pointer;
+    padding: 15px 20px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    background: #ffffff;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title i {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title.active-title {
+    background-color: #001935;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title.active-title h2 {
+    color: #ffffff;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title.active-title h2 i {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title h2 {
+    margin: 0;
+    font-size: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: #001935;
+    line-height: 20px;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-title h2 i {
+    font-size: 25px;
+    position: inherit;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-content {
+    display: none;
+    line-height: 1.7;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-content.active {
+    display: block;
+  }
+  
+  .faq-section .accordions .accordion-item .accordion-content p {
+    margin: 0;
+  }
+
+  .accordion-title{
+   background-color: #001935;
+  }
+
+
+
+
+
+  .subscribe-section {
+    background: #fd1616;
+    padding: 80px 0;
+  }
+  
+  .subscribe-section .section-title {
+    margin-bottom: 0;
+  }
+  
+  .subscribe-section .section-title h2 {
+    color: #ffffff;
+    margin: 0 auto 10px 0;
+  }
+  
+  .subscribe-section .section-title p {
+    color: #ffffff;
+    margin-bottom: 0;
+  }
+  
+  .subscribe-section .newsletter-form {
+    position: relative;
+  }
+  
+  .subscribe-section .newsletter-form .form-control {
+    height: 65px;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .subscribe-section .newsletter-form .sub-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 65px;
+    border-radius: 10px;
+    background: #001935;
+    color: #ffffff;
+    padding: 0 30px;
+    border: 1px solid transparent;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .subscribe-section .newsletter-form .sub-btn:hover {
+    background: #fd1616;
+    border: 1px solid #ffffff;
+  }
+  
+  .subscribe-section .newsletter-form ::-webkit-input-placeholder {
+    font-size: 18px;
+  }
+  
+  .subscribe-section .newsletter-form :-ms-input-placeholder {
+    font-size: 18px;
+  }
+  
+  .subscribe-section .newsletter-form ::-ms-input-placeholder {
+    font-size: 18px;
+  }
+  
+  .subscribe-section .newsletter-form ::placeholder {
+    font-size: 18px;
+  }
+  
+  .subscribe-section .newsletter-form .validation-danger {
+    color: #ffffff;
+    margin-top: 10px;
+  }
+
+  .accordion-content {
+    display: none;
+}
+
+.accordion-title.active-title {
+    background-color: #001935;
+    color: #ffffff;
+}
+
+.accordion-title.active-title i {
+    transform: rotate(90deg);
+}
+

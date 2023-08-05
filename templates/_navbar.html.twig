@@ -1,0 +1,35 @@
+<nav data-no-swup>
+    <ul class="menu">
+        <li class="logo">
+            <a href="/">
+                <img class="logo" src="{{ asset('/assets/images/logo-externatic-couleur-white.svg') }}" alt="Logo">
+            </a>
+        </li>
+        <li class="item"><a href="/">Accueil</a></li>
+        <li class="item"><a href="{{ path('app_about') }}">A propos</a></li>
+        <li class="item"><a href="{{ path('app_offer') }}">Emplois</a></li>
+        <li class="item"><a href="{{ path('app_company') }}">Entreprises</a></li>
+        <li class="item"><a href="{{ path('app_contact') }}">Contact</a></li>
+        {# {% if is_granted('ROLE_ADMIN') %}
+        <li class="item"><a href="{{ path('admin') }}">Admin</a></li>
+        {% endif %} #}
+
+        </li>
+        {% if app.user is not null %}
+            {% if 'ROLE_ENTREPRISE' in app.user.roles %}
+                <li class="item button secondary"><a href="{{ path('app_profil_company_index')}}">{{ app.user.firstname }}</a></li>
+            {% elseif 'ROLE_CANDIDAT' in app.user.roles %}
+                <li class="item button secondary"><a href="{{ path('app_profil_index')}}">{{ app.user.firstname }}</a></li>
+            {% elseif 'ROLE_ADMIN' in app.user.roles %}
+                <li class="item button secondary"><a href="/admin">{{ app.user.firstname }}</a></li>
+            {% endif %}
+                <li class="item button"><a href="{{ path('app_logout')}}">Deconnexion</a></li>
+        {% else %}
+            <li class="item button"><a href="{{ path('app_login')}}">Connexion</a></li>
+            <li class="item button secondary"><a href="{{ path('app_register')}}">Inscription</a></li>
+        {% endif %}
+
+        <li class="toggle"><span class="bars"></span></li>
+    </ul>
+    </nav>
+

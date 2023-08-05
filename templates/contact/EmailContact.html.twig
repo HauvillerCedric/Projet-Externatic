@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vous avez une demande</title>
+</head>
+<body>
+<h1> Vous venez de recevoir un mail de {{mailer.name}}</h1>
+<hr>
+<h2>Une question sur le thème:{{ subject.name }} </h2>
+<hr>
+<h1> Message: </h1>
+<p>{{mailer.description}}</p>
+<hr>
+<h4>Identifiant du demandeur:</h4>
+<p>{{mailer.name}}</p>
+<p>{{mailer.email}}</p>
+<p>{{mailer.phone}}</p>
+</body>
+</html>

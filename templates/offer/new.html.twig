@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Déposer une offre{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-4 mb-4">Déposer une offre d'emploi</h1>
+
+    {{ include('offer/_form.html.twig') }}
+
+    
+    <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_offer') }}">Retour</a></button>
+{% endblock %}

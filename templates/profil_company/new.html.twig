@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer votre Entreprise{% endblock %}
+
+{% block body %}
+
+    {% embed '_dashboardCompany.html.twig' %}
+
+        {% block extra_content %}
+    
+            <h1 class="text-center mt-4 mb-4">Créer Votre Entreprise</h1>
+
+            {{ include('profil_company/_form.html.twig') }}
+
+            <a href="{{ path('app_profil_company_index') }}">Retour</a>
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

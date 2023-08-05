@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offres d'emploi{% endblock %}
+
+{% block body %}
+    <!-- Page Title Start -->
+        <section class="page-title title-bg2">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <h2>chercher un emploi</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Accueil</a>
+                        </li>
+                        <li>Chercher un emploi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </section>
+        <!-- Page Title End -->
+
+        <!-- Find Section Start -->
+        <div class="find-section ptb-100 ">
+            <div class="container">
+                {{ form_start(form, {'attr':{'class':'find-form'}}) }}
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                {{ form_row(form.search, {'attr': {'class': 'form-control', 'placeholder': 'Titre de l\'emploi ou mot-clé'}, 'label': false}) }}
+                                <i class='bx bx-search-alt'></i>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                {{ form_row(form.location, {'attr': {'class': 'form-control', 'placeholder': 'Localisation'}, 'label': false}) }}
+                                <i class='bx bx-location-plus'></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                                {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-3">
+                            <button type="submit" class="find-btn">
+                                Emploi
+                                <i class='bx bx-search'></i>
+                            </button>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <!-- Find Section End -->
+    
+        <!-- Job Category Section Start -->
+        <div class="category-style-two pb-70"> 
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2 class=''>Catégorie d'emplois populaires</h2>
+                    <p>Explorez les domaines les plus recherchés sur le marché du travail : technologie, finance, santé, enseignement. Ces emplois offrent des opportunités passionnantes avec croissance et salaires compétitifs.</p>
+                </div>
+
+                <div class="row">
+                {% for category in categories %}
+                    {% if category.offers is not empty %}
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="category-item">
+                                <i class="bx bx-desktop"></i>
+                                <h4>{{category.name }}</h4>
+                                <p>Disponible</p>   
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <!-- Job Category Section End -->
+
+		<!-- Jobs Section Start -->
+		<section class="job-section pb-70">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>Offres d'emploi susceptibles de vous intéresser</h2>
+					<p>Découvrez des offres d'emploi susceptibles de vous intéresser. Explorez des opportunités passionnantes dans différents domaines tels que la technologie, la finance, la santé ou l'enseignement. Trouvez des postes avec croissance professionnelle et rémunération compétitive. Explorez les descriptions de poste, exigences et compétences requises pour ces opportunités.</p>
+				</div>
+				<div class="row">
+					{% for offer in offers %}
+				
+					<div class="col-md-6">
+						<div class="job-card">
+							<div class="row align-items-center">
+								<div class="col-lg-3">
+									<div class="thumb-img">
+										<a href="job-details.html">
+                                            <img src="{{ vich_uploader_asset(offer.company, 'posterFile') }}" alt="{{ offer.company.name }}">
+										</a>
+									</div>
+								</div>
+							
+								<div class="col-lg-6">
+									<div class="job-info">
+										<h3>
+											<a href="{{ path('app_offer_show', {id:offer.id}) }}">{{ offer.title }}</a>
+										</h3>
+										<ul>
+											<li>Via {{offer.company.name}}</li>
+											
+                                            <li> {{offer.category.name}}</li>
+												<i class='bx bx-location-plus'></i>
+												{{ offer.location }}
+											</li>
+											<li>
+												<i class='bx bx-filter-alt' ></i>
+												{{offer.experienceReq}} ans
+											</li>
+											<li>
+												<i class='bx bx-briefcase' ></i>
+												{{ offer.salaryRange }}
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="col-lg-3">
+									<div class="job-save">
+										<span>{{ offer.contractType }}</span>
+                                        {% if app.user %}
+										<a href="{{ path('app_offer_watchlist', {slug: offer.slug})}}">
+                                            <i class=" bi {{app.user.isInWatchlist(offer) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                                        </a>
+                                        {% endif %}
+										<p>
+											<i class='bx bx-stopwatch' ></i>
+											{{ offer.datePosted ? offer.datePosted|date('d-m-Y') : '' }}
+										</p>
+									</div>
+								</div>
+							</div>
+                            <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_offer_show', {id:offer.id}) }}">Voir l'offre</a></button>
+						</div>
+					</div>	
+					{% endfor %}
+			</div>
+				</div>
+		</section>
+        {% if is_granted("ROLE_ENTREPRISE") %}
+        <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_offer_new') }}">Déposer une offre</a></button>
+		<!-- Jobs Section End -->
+        {% endif %}
+{% endblock %}

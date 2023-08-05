@@ -1,0 +1,66 @@
+<div class="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">Mon Profil</a>
+                </div>
+                <!-- Sidebar navigation -->
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages" aria-expanded="false" aria-controls="pages">
+                            <i class="fa-solid fa-user pe-2"></i>
+                            Profil
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            {% if profil is not null %}
+                                {% if profil.slug is not empty %}
+                                    <li class="sidebar-item">
+                                        <a href="{{ path('app_profil_show', {slug: profil.slug}) }}" class="sidebar-link">Votre profil</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="{{ path('app_profil_edit', {slug: profil.slug}) }}" class="sidebar-link">Modifier votre profil</a>
+                                    </li>
+                                {% else %}
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Votre profil</a>
+                                    </li>
+                                {% endif %}
+                            {% else %}
+                                <li class="sidebar-item">
+                                    <a href="{{ path('app_profil_new') }}" class="sidebar-link">Créer votre profil</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+                            <i class="fa-solid fa-heart pe-2"></i>
+                            Favoris
+                        </a>
+                        <ul id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                {% if profil is not null and profil.slug is not empty %}
+                                    <a href="{{ path('app_profil_favoris', {slug: profil.slug}) }}" class="sidebar-link">Offres favorites</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- Main Component -->
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <!-- Button for sidebar toggle -->
+                <button class="btn-dashboard" type="button" data-bs-theme="light">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            {% block extra_content %}{% endblock %}
+        </div>
+
+    </div>
+
+    

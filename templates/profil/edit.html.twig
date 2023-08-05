@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Votre Profil{% endblock %}
+
+{% block body %}
+
+    {% embed '_dashboardProfil.html.twig' %}
+
+        {% block extra_content %}
+    
+            <h1 class="text-center mt-4 mb-4">Modifier votre profil</h1>
+
+            {{ include('profil/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

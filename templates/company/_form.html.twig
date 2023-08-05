@@ -1,0 +1,19 @@
+<div class="text-center">
+    <div class="card mx-auto" style="width: 50%">
+        <div class="card-body">
+            {{ form_start(form) }}
+                <div class="row text-start">
+                    <div>
+                        {{ form_row(form.name) }}
+                        {{ form_row(form.description)}}
+                        {{ form_row(form.location)}}
+                        {{ form_row(form.posterFile) }}
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                    <button class="btn" type="submit" style="background-color: #001935; color:white; ">{{ button_label|default('Enregistrer') }}</button>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

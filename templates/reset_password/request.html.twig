@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Renitialisez votre mot de passe{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <h3 class=" mb-4 mt-4 font-weight-normal text-center">Rénitialisez votre mot de passe</h3>
+        <div class="card mx-auto" style="width: 50%">
+                {{ form_start(requestForm) }}
+                <div class="p-3 text-start">{{ form_row(requestForm.email) }}</div>
+            <div>
+                <button class="btn mb-3" type="submit" style="background-color: #001935; color:white;">{{ button_label|default('Envoyer un e-mail') }}</button>
+            </div>
+            {{ form_end(requestForm) }}
+        </div>
+{% endblock %}

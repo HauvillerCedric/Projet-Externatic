@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Votre Entreprise{% endblock %}
+
+{% block body %}
+    
+     {% embed '_dashboardCompany.html.twig' %}
+
+        {% block extra_content %}
+    
+            <h1 class="text-center mt-4 mb-4">Modifier votre entreprise</h1>
+
+            {{ include('profil_company/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+            <a href="{{ path('app_profil_company_index') }}">Retour</a>
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Renitialisez votre Mot de passe{% endblock %}
+
+{% block body %}
+    <h3 class="mb-4 mt-4 font-weight-normal text-center">Rénitialisez votre mot de passe</h3>
+    <div class="card mx-auto" style="width: 50%">
+        {{ form_start(resetForm) }}
+        <div class="text-start">
+        {{ form_row(resetForm.plainPassword) }}
+        </div>
+            <button class="btn mt-3 mb-3" type="submit" style="background-color: #001935; color:white;">{{ button_label|default('Réinitialiser') }}</button>
+        {{ form_end(resetForm) }}
+    </div>
+{% endblock %}

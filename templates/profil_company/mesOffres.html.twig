@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes offres{% endblock %}
+
+{% block body %}
+
+    {% embed '_dashboardCompany.html.twig' %}
+
+        {% block extra_content %}
+            <div class="card mx-auto mt-4 p-4" style="width: 95%">
+                <h1 class="mb-4">Mes offres </h1>
+                {% if mesOffres is empty %}
+                    <p>Aucune offre pour le moment.</p>
+                {% else %}
+                    <div class="row">
+                        {% for mesOffre in mesOffres %}
+                            <div class="col-md-6">
+						            <div class="job-card">
+							            <div class="row align-items-center">
+								            <div class="col-lg-3">
+									            <div class="thumb-img">
+										            <a href="job-details.html">
+                                                        <img src="{{ vich_uploader_asset(mesOffre.company, 'posterFile') }}" alt="{{ mesOffre.company.name }}">
+										            </a>
+									            </div>
+								            </div>
+							
+								            <div class="col-lg-6">
+									            <div class="job-info">
+										            <h3>
+											            <a href="{{ path('app_offer_show', {id:mesOffre.id}) }}">{{ mesOffre.title }}</a>
+										            </h3>
+										            <ul>
+											            <li>Via {{mesOffre.title}}</li>
+											
+                                                        <li>
+												            <i class='bx bx-location-plus'></i>
+												            {{ mesOffre.location }}
+											            </li>
+											            <li>
+												            <i class='bx bx-briefcase' ></i>
+												            {{ mesOffre.salaryRange }}
+											            </li>
+										            </ul>
+									            </div>
+								            </div>
+							            </div>
+						            </div>
+					            </div>	
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %} 
+
+    {% endembed %}
+    
+{% endblock %}

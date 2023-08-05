@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes offres en favoris{% endblock %}
+
+{% block body %}
+
+    {% embed '_dashboardProfil.html.twig' %}
+
+        {% block extra_content %}
+            <div class="card mx-auto mt-4 p-4" style="width: 95%">
+                <h1 class="mb-4">Mes offres en favoris</h1>
+                {% if favorites is empty %}
+                    <p>Aucune offre en favoris pour le moment.</p>
+                {% else %}
+                    <div class="row">
+                        {% for favorite in favorites %}
+                            <div class="col-md-6">
+						            <div class="job-card">
+							            <div class="row align-items-center">
+								            <div class="col-lg-3">
+									            <div class="thumb-img">
+										            <a href="job-details.html">
+                                                        <img src="{{ vich_uploader_asset(favorite.company, 'posterFile') }}" alt="{{ favorite.company.name }}">
+										            </a>
+									            </div>
+								            </div>
+							
+								            <div class="col-lg-6">
+									            <div class="job-info">
+										            <h3>
+											            <a href="{{ path('app_offer_show', {id:favorite.id}) }}">{{ favorite.title }}</a>
+										            </h3>
+										            <ul>
+											            <li>Via {{favorite.title}}</li>
+											
+                                                        <li>
+												            <i class='bx bx-location-plus'></i>
+												            {{ favorite.location }}
+											            </li>
+											            <li>
+												            <i class='bx bx-briefcase' ></i>
+												            {{ favorite.salaryRange }}
+											            </li>
+										            </ul>
+									            </div>
+								            </div>
+
+								            <div class="col-lg-3">
+									            <div class="job-save">
+										            <span>{{ favorite.contractType }}</span>
+                                                    {% if app.user %}
+										            <a class="watchlist" data-no-swup href="{{ path('app_offer_watchlist', {slug: favorite.slug})}}">
+                                                        <i class=" bi {{app.user.isInWatchlist(favorite) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                                                    </a>
+                                                    {% endif %}
+										            <p>
+											            <i class='bx bx-stopwatch' ></i>
+											            {{ favorite.datePosted ? favorite.datePosted|date('d-m-Y') : '' }}
+										            </p>
+									            </div>
+								            </div>
+							            </div>
+						            </div>
+					            </div>	
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %} 
+
+    {% endembed %}
+    
+{% endblock %}

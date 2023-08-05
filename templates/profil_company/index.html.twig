@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Entreprise{% endblock %}
+
+{% block body %}
+    
+    {% embed '_dashboardCompany.html.twig' %}
+
+        {% block extra_content %}
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3 text-center">
+                    <h2 class="mt-4">Bienvenue dans votre espace personnel</h2>
+                    </div>
+                </div>
+                <div class="contact-card text-start col-9 container mt-4">
+                <p>Bienvenue sur votre tableau de bord !
+                        Nous tenons tout d'abord à vous remercier de votre présence ici.<br> Votre engagement est précieux et nous sommes ravis de vous offrir cet espace pour gérer votre profil.<br>
+                        Dans cette interface conviviale, vous avez la possibilité de mettre à jour votre profil, de le modifier selon vos besoins, ainsi que de supprimer votre compte si vous le souhaitez.<br>
+                        <span class="fw-bold ">L'équipe Externatic !</span>
+                    </p>
+                </div>
+            </main>
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

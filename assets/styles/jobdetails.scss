@@ -1,0 +1,453 @@
+/* Default CSS Start */
+img {
+    max-width: 100%;
+}
+
+a {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+p {
+    font-size: 17px;
+    color: #707070;
+    line-height: 1.8;
+}
+
+button {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+}
+
+button:focus {
+    outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #001935;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+.form-control:focus {
+    -webkit-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+}
+
+.d-table {
+    width: 100%;
+    height: 100%;
+}
+
+.d-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+}
+
+.ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    font-weight: 600;
+    max-width: 550px;
+    margin: 0 auto 10px;
+    line-height: 1;
+   
+}
+
+.section-title p {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.theme-btn .default-btn {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Catamaran", sans-serif;
+    background: #fd1616;
+    color: #ffffff;
+    margin-right: 15px;
+    border: 1px solid transparent;
+    padding: 10px 25px;
+    display: inline-block;
+}
+
+.theme-btn .default-btn:hover {
+    background: #001935;
+    border: 1px solid #ffffff;
+}
+
+/* Default CSS End */
+/* Page Title CSS Start */
+.page-title {
+    background-position: center center;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-title::before {
+    position: absolute;
+    content: "";
+    background: rgba(1, 12, 41, 0.85);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.page-title h2 {
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    
+}
+
+.page-title ul {
+    margin: 0;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid rgba(132, 137, 152, 0.5);
+    border-radius: 30px;
+}
+
+.page-title ul li {
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+   
+}
+
+.page-title ul li::before {
+    position: absolute;
+    content: "\ea50";
+    right: -28px;
+    top: 4px;
+    font-family: "boxicons";
+    font-size: 22px;
+    line-height: 1;
+}
+
+.page-title ul li:last-child::before {
+    display: none;
+}
+
+.page-title ul li a {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.page-title ul li a:hover {
+    color: #fd1616;
+}
+
+.page-title .lines {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    z-index: -1;
+}
+
+.page-title .lines .line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    left: 50%;
+    top: 0;
+}
+
+.page-title .lines .line::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: #fd1616;
+    left: 0;
+    top: -50%;
+    right: 0;
+    margin: auto;
+    -webkit-animation: line 6s infinite cubic-bezier(0, 1.11, 1, 1);
+    animation: line 6s infinite cubic-bezier(0, 1.11, 1, 1);
+}
+
+.page-title .lines :nth-child(1) {
+    margin-left: 25%;
+}
+
+.page-title .lines :nth-child(2)::after {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.page-title .lines :nth-child(3) {
+    margin-left: -25%;
+}
+
+.page-title .lines :nth-child(3)::after {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.page-title.title-bg6 {
+    background-image: url(/public/assets/images/man-holding-meeting-his-workplace.jpg);
+  }
+  
+  .job-details-text .job-card {
+    background: #ffffff;
+    border: 0;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+  
+  .job-details-text .job-card:hover {
+    border: 0;
+    -webkit-box-shadow: 0 0 0 0;
+            box-shadow: 0 0 0 0;
+  }
+  
+  .job-details-text .job-card .company-logo {
+    background: #ddd;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+  }
+  
+  .job-details-text .job-card .job-info h3 {
+    font-size: 25px;
+  }
+  
+  .job-details-text .job-card .job-info ul {
+    margin-bottom: 6px;
+  }
+  
+  .job-details-text .job-card .job-info ul li {
+    display: inline-block;
+    font-size: 18px;
+    padding-right: 10px;
+    font-weight: 500;
+  }
+  
+  .job-details-text .job-card .job-info span {
+    color: #fd1616;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .job-details-text .job-card .job-info span i {
+    top: 4px;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+  }
+  
+  .job-details-text .details-text {
+    margin-bottom: 30px;
+  }
+  
+  .job-details-text .details-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .job-details-text .details-text p {
+    margin-bottom: 10px;
+  }
+  
+  .job-details-text .details-text ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  
+  .job-details-text .details-text ul li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+  
+  .job-details-text .details-text ul li i {
+    top: 2px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .job-details-text .details-text .table {
+    margin-bottom: 0;
+  }
+  
+  .job-details-text .details-text .table tr {
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .job-details-text .details-text .table tr td {
+    border-top: 0;
+    padding: 0 0 10px 0;
+    color: #707070;
+  }
+  
+  .job-details-text .details-text .table tr td span {
+    color: #001935;
+    font-weight: 500;
+  }
+  
+  .job-details-text .details-text .table tr td a {
+    color: #707070;
+  }
+  
+  .job-details-text .details-text .table tr:last-child td {
+    padding-bottom: 0;
+  }
+  
+  .job-details-text .details-text:last-child {
+    margin-bottom: 0;
+  }
+  
+  .job-details-text .theme-btn {
+    margin-top: 20px;
+  }
+  
+  .job-sidebar {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: #ffffff;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 30px;
+  }
+  
+  .job-sidebar h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .job-sidebar img {
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .job-sidebar h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .job-sidebar span {
+    font-size: 15px;
+  }
+  
+  .job-sidebar iframe {
+    height: 400px;
+    width: 100%;
+    margin-bottom: -10px;
+  }
+  
+  .job-sidebar ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .job-sidebar ul li {
+    display: inline-block;
+    margin-bottom: 5px;
+    list-style: none;
+  }
+  
+  .job-sidebar ul li a {
+    border: 1px dashed #ddd;
+    padding: 5px 10px;
+    color: #001935;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .job-sidebar ul li a:hover {
+    background: #fd1616;
+    color: #ffffff;
+  }
+  
+  .job-sidebar.social-share ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  
+  .job-sidebar.social-share ul li {
+    display: inline-block;
+    margin-bottom: 5px;
+    list-style: none;
+  }
+  
+  .job-sidebar.social-share ul li a {
+    border: 0;
+    padding: 0;
+    border-radius: 10px;
+  }
+  
+  .job-sidebar.social-share ul li a i {
+    border: 1px solid #ddd;
+    color: #001935;
+    display: inline-block;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: red;
+    border-radius: 10px;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  .job-sidebar.social-share ul li a i:hover {
+    color: #ffffff;
+  }
+  

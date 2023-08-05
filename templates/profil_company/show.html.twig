@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprise{% endblock %}
+
+{% block body %}
+
+    {% embed "_dashboardCompany.html.twig" %}
+
+        {% block extra_content %}
+    
+            <section class="account-section ptb-100">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="account-details">
+                            <form id="edit" >
+                                <div class="text-center mt-4 mb-4">
+                                    <h1 class="text-center mt-4 mb-4">{{company.name}}</h1>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Votre entreprise: {{company.name}}</h3>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="titleProfil" value="{{ company.name }}" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Description de l'entreprise :</h3>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="descriptionProfil" rows="3" readonly>{{ company.description }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Localisation de l'entreprise :</h3>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="locationProfil" value="{{ company.location }}" readonly>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <a  class="btn" style="background-color: #001935; color:white;" href="{{ path('app_profil_company_edit', {slug: company.slug}) }}">Modifier votre entreprise</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn" style="background-color: #001935; color:white;" onclick="window.location.href='{{ path('app_contact') }}'">Demande de suppression de compte</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+
+    {% endembed %}
+
+{% endblock %}

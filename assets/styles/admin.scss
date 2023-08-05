@@ -1,0 +1,38 @@
+:root{
+
+    --sidebar-bg:  #001935;
+    --sidebar-menu-active-item-color:#fd1616;
+    --button-primary-bg: #fd1616;
+    --text-color: white;
+    --pagination-active-bg:  #001935;
+    // --bs-navbar-toggler-icon-bg: url('assets/images/favicon-externatic-couleur.png');
+    --sidebar-logo-color: white;
+    --sidebar-menu-color: whitesmoke;
+    --form-type-check-input-checked-bg:#fd1616; 
+    --table-thead-sorted-marker-color: #b5a34b;
+    --content-search-icon-color: #fd1616;
+    --link-color:#001935;
+    --link-hover-color: #fd1616;
+    --border-radius:10px;
+    --content-search-input-bg:#DCDCDC; 
+
+    
+}
+
+.ea-dark-scheme {
+
+    // DARK MODE
+    
+    --sidebar-menu-active-item-color:#fd1616;
+    --button-primary-bg: #fd1616;
+    --text-color: white;
+    --pagination-active-bg:  #001935;
+    // --bs-navbar-toggler-icon-bg: url('assets/images/favicon-externatic-couleur.png');
+    --sidebar-logo-color: white;
+    --sidebar-menu-color: whitesmoke;
+    --form-type-check-input-checked-bg:#fd1616; 
+    --table-thead-sorted-marker-color: #b5a34b;
+    --content-search-icon-color: #fd1616;
+    --link-color:#fd1616;
+    --content-search-input-bg:#DCDCDC;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-3">
+            {# {% if app.user.avatarUrl is not null %} #}
+                <p>
+                    <img src="{{ asset('/assets/images/favicon-externatic-couleur.png') }}" alt="" width="100%">
+                </p>
+            {# {% endif %} #}
+                {% for role in app.user.roles %}
+                    {% if role != 'ROLE_USER' %}
+                        <p>
+                            <span class="fa fa-star"></span>
+                            <i>{{ role }}</i>
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col-9">
+                <h3>{{ app.user.firstname  }}</h3>
+                <p>Email: {{ app.user.email }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

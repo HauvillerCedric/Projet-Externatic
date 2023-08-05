@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier votre offre{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-4 mb-4">Modifier votre offre</h1>
+
+    {{ include('offer/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    
+    <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_offer') }}">Retour</a></button>
+
+    {{ include('offer/_delete_form.html.twig') }}
+{% endblock %}

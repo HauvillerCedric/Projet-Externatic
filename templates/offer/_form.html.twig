@@ -1,0 +1,28 @@
+<div class="text-center">
+    <div class="card mx-auto" style="width: 75%">
+        <div class="card-body">
+            
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-6 text-start">
+                    {{ form_row(form.title) }}
+                    {{ form_row(form.description)}}
+                    {{ form_row(form.location)}}
+                    {{ form_row(form.contractType) }}
+                    {{ form_row(form.salaryRange) }}
+                </div>
+                <div class="col-md-6 text-start">
+                    {{ form_row(form.experienceReq) }}
+                    {{ form_row(form.skillsReq) }}
+                    {{ form_row(form.datePosted) }}
+                    {{ form_row(form.company) }}
+                    {{ form_row(form.category) }}
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                <button class="btn" type="submit" style="background-color: #001935; color:white;">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'entreprise{% endblock %}
+
+{% block body %}
+
+<!-- Page Title Start -->
+<section class="page-title title-bg6">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <h2>Détails de l'entreprise</h2>
+            <ul>
+                <li>
+                    <a href="/">Accueil</a>
+                </li>
+                <li>Détails de l'entreprise</li>
+            </ul>
+        </div>
+    </div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</section>
+<!-- Page Title End -->
+
+<!-- Job Details Section Start -->
+<section class="job-details ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="job-details-text">
+                            <div class="job-card">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <div class="company-logo">
+                                            <img src="{{ vich_uploader_asset(company, 'posterFile') }}"
+                                                alt="{{ company.name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="job-info">
+                                            <h3>{{ company.name }}</h3>
+                                            <ul>
+                                                <li>
+                                                    <i class='bx bx-location-plus'></i>
+                                                    {{ company.location }}
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-text">
+                                <h3>Description de l'entreprise</h3>
+                                <p>{{ company.description }}</p>
+                            </div>
+
+                            <div class="details-text">
+                                <h3>Profil souhaité</h3>
+
+                                <ul>
+                                    <li>
+                                        <i class='bx bx-check'></i>
+                                        Expériences professionnelles
+                                    </li>
+                                    <li>
+                                        <i class='bx bx-check'></i>
+                                        {{company.location }}
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="job-sidebar">
+                    <h3>Posté par {{company.name }}</h3>
+                    <div class="posted-by">
+                        <img src="{{ vich_uploader_asset(company, 'posterFile') }}"
+                            alt="{{ company.name }}">
+                        <h4>{{company.name}}</h4>
+                    </div>
+                </div>
+
+                <div class="job-sidebar">
+                    <h3>{{company.location}}</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.1630449961685!2d-1.5657164237839374!3d47.21339197115643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ec032ada7053%3A0xb24cb5a07c77528!2s1%20Rue%20Racine%2C%2044000%20Nantes!5e0!3m2!1sen!2sfr!4v1686564283844!5m2!1sen!2sfr"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="job-sidebar social-share">
+                    <h3>Résaux sociaux</h3>
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% if is_granted("ROLE_ENTREPRISE") %}
+    {% if app.user is defined and app.user.id == company.user.id %}
+    <div>
+        <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a
+                href="{{ path('app_profil_company_edit',{slug : company.slug}) }}">Modifier votre entreprise</a></button>
+    </div>
+    {% endif %}
+{% endif %}
+        <!-- Job Details Section End -->
+        
+{% endblock %}

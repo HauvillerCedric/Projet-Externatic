@@ -1,0 +1,48 @@
+/*---------- Job List Page CSS Start ----------*/
+.page-title.title-bg4 {
+  background-image: url(/public/assets/images/fondJob.jpg);
+}
+
+.job-list-section .pagination {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.job-list-section .pagination .page-item .page-link {
+  width: 50px;
+  display: inline-block;
+  margin: 0 2px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  background: #ffffff;
+  color: #fd1616;
+  font-weight: 600;
+  font-size: 17px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+}
+
+.job-list-section .pagination .page-item .page-link:hover, .job-list-section .pagination .page-item .page-link.active {
+  background: #001935;
+  color: #ffffff;
+}
+
+.job-list-section .pagination .page-item .page-link i {
+  font-size: 25px;
+  line-height: 50px;
+}
+
+.job-list-section .pagination .page-item .page-link .bx-fade-right {
+  -webkit-animation: fade-right 3s infinite linear;
+          animation: fade-right 3s infinite linear;
+}
+
+.job-list-section .pagination .page-item .page-link .bx-fade-left {
+  -webkit-animation: fade-left 3s infinite linear;
+          animation: fade-left 3s infinite linear;
+}
+
+/*---------- Job List Page CSS End ----------*/

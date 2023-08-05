@@ -1,0 +1,23 @@
+
+# fos_ck_editor:
+#   configs:
+#     main_config:
+#         toolbar:
+#             - { name: "styles",
+#                 items:
+#                 ["Bold", "Italic", "Underline", "Strike", "Blockquote", "-", "Link", "-", "RemoveFormat", "-", "NumberedList", "BulletedList", "-", "Outdent", "Incident", "-", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock", "-", "Image", "Table", "-", "Styles", "Format", "Font", "FontSize", "-", "TextColor", "BGColor", "SourcedColor"]
+#             }
+fos_ck_editor:
+  configs:
+    full_config:
+      height: '500'
+      width: '700'
+      
+      uiColor: '#DCDCDC'
+      toolbarCanCollapse: true
+      extraAllowedContent: 'div(*){*}[*];h1(*){*}[*];h2(*){*}[*];p(*){*}[*];hr(*){*}[*];'
+      #filebrowserBrowseRoute: elfinder
+      #filebrowserBrowseRouteParameters: []
+twig:
+  form_themes:
+    - '@FOSCKEditor/Form/ckeditor_widget.html.twig'

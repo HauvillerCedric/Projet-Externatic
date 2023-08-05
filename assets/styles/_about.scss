@@ -1,0 +1,868 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&family=Ysabeau+Office:wght@900&display=swap');
+
+body {
+    font-size: 17px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #707070;
+    line-height: 1.6;
+  }
+  
+  /* Default CSS Start */
+  img {
+    max-width: 100%;
+  }
+  
+  a {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:focus {
+    text-decoration: none;
+  }
+  
+  p {
+    font-size: 17px;
+    color: #707070;
+    line-height: 1.8;
+  }
+  
+  button {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #001935;
+    font-weight: bold;
+  }
+  
+  h1{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+  
+  .form-control:focus {
+    -webkit-box-shadow: 0 0 0 0;
+            box-shadow: 0 0 0 0;
+  }
+  
+  .d-table {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .d-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .pt-100 {
+    padding-top: 100px;
+  }
+  
+  .pb-70 {
+    padding-bottom: 70px;
+  }
+  
+  .ptb-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .pb-100 {
+    padding-bottom: 100px;
+  }
+  
+  .section-title {
+    margin-bottom: 60px;
+  }
+  
+  .section-title h2 {
+    font-size: 38px;
+    font-weight: 600;
+    max-width: 550px;
+    margin: 0 auto 10px;
+    line-height: 1;
+   
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  .section-title p {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  
+  .theme-btn .default-btn {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Catamaran", sans-serif;
+    background: #fd1616;
+    color: #ffffff;
+    margin-right: 15px;
+    border: 1px solid transparent;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+  
+  .theme-btn .default-btn:hover {
+    background: #001935;
+    border: 1px solid #ffffff;
+  }
+  
+  /* Default CSS End */
+/*---------- About Page CSS Start ----------*/
+/* Page Title CSS Start */
+.page-title {
+  background-image: url("/public/assets/images/QSN1.jpg");
+    background-position: center center;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .page-title::before {
+    position: absolute;
+    content: '';
+    background: rgba(1, 12, 41, 0.85);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .page-title h2 {
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  .page-title ul {
+    margin: 0;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid rgba(132, 137, 152, 0.5);
+    border-radius: 30px;
+  }
+  
+  .page-title ul li {
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    margin: 0 15px;
+    // text-transform: capitalize;
+  }
+  
+  .page-title ul li::before {
+    position: absolute;
+    content: '\ea50';
+    right: -28px;
+    top: 4px;
+    font-family: 'boxicons';
+    font-size: 22px;
+    line-height: 1;
+  }
+  
+  .page-title ul li:last-child::before {
+    display: none;
+  }
+  
+  .page-title ul li a {
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+  .page-title ul li a:hover {
+    color: #fd1616;
+  }
+  
+  .page-title .lines {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .page-title .lines .line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    left: 50%;
+    top: 0;
+  }
+  
+  .page-title .lines .line::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 10px;
+    background: #fd1616;
+    left: 0;
+    top: -50%;
+    right: 0;
+    margin: auto;
+    -webkit-animation: line 6s infinite cubic-bezier(0, 1.11, 1, 1);
+            animation: line 6s infinite cubic-bezier(0, 1.11, 1, 1);
+  }
+  
+  .page-title .lines :nth-child(1) {
+    margin-left: 25%;
+  }
+  
+  .page-title .lines :nth-child(2)::after {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+  
+  .page-title .lines :nth-child(3) {
+    margin-left: -25%;
+  }
+  
+  .page-title .lines :nth-child(3)::after {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  
+  /* Page Title CSS End */
+  /* About CSS Start */
+  .about-section .about-text .section-title {
+    margin-bottom: 25px;
+  }
+  
+  .about-section .about-text .section-title h2 {
+    margin: 0 auto 10px 0;
+  }
+  
+  .about-section .about-text p {
+    margin-bottom: 25px;
+  }
+  
+  /* About CSS End */
+  /* Why Choose CSS Start */
+  .section-title h2 {
+    line-height: 1.4;
+  }
+  
+  /* Why Choose CSS End */
+
+  /* Way To Use CSS Start */
+.use-section {
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    background-attachment: fixed;
+  }
+  
+  .use-section::before {
+    position: absolute;
+    content: '';
+    background: rgba(1, 12, 41, 0.85);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .use-section .section-title h2 {
+    color: #ffffff;
+  }
+  
+  .use-text {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .use-text span {
+    color: #fd1616;
+    background: #fdc7c7;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    line-height: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -100px;
+    margin: auto;
+    z-index: 1;
+  }
+  
+  .use-text i {
+    font-size: 50px;
+    color: #fd1616;
+    background: #ffffff;
+    display: inline-block;
+    border: 3px dashed #fd1616;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 150px;
+    margin-bottom: 30px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .use-text h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .use-text p {
+    color: #ffffff;
+    margin-bottom: 0;
+  }
+  
+  .use-text:hover i {
+    background: #fd1616;
+    color: #ffffff;
+  }
+  
+  /* Way To Use CSS End */
+  /* Why Choose CSS Start */
+.why-choose {
+    background: #010c29;
+    position: relative;
+  }
+  
+  .why-choose::before {
+    position: absolute;
+    content: '';
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 330px;
+    height: 400px;
+  }
+  
+  .why-choose-text {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .why-choose-text .section-title {
+    margin-bottom: 50px;
+  }
+  
+  .why-choose-text .section-title h2 {
+    color: #ffffff;
+  }
+  
+  .why-choose-text .section-title p {
+    color: #ffffff;
+    max-width: 500px;
+  }
+  
+  .why-choose-text .media {
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .why-choose-text .media i {
+    background: #182441;
+    font-size: 30px;
+    color: #fd1616;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+  }
+  
+  .why-choose-text .media .media-body {
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+  
+  .why-choose-text .media .media-body h5 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .why-choose-text .media .media-body p {
+    color: #ffffff;
+    font-size: 15px;
+    max-width: 260px;
+  }
+  
+  .counter-area .counter-text {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .counter-area .counter-text h2 {
+    color: #fd1616;
+    font-size: 45px;
+    font-weight: 700;
+  }
+  
+  .counter-area .counter-text p {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  .why-choose-img {
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+  }
+  
+  /* Why Choose CSS End */
+  /* Why Choose Section CSS Start */
+.choose-card {
+    border: 1px dashed #fd1616;
+    padding: 36px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .choose-card i {
+    font-size: 40px;
+    color: #fd1616;
+    background: #fdccc0;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    right: -5px;
+    border: 1px dashed #fd1616;
+    margin-bottom: 25px;
+  }
+  
+  .choose-card h3 {
+    margin-bottom: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .choose-card p {
+    margin-bottom: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .choose-card:hover {
+    background: #fd1616;
+  }
+  
+  .choose-card:hover i {
+    border: 1px dashed #ffffff;
+  }
+  
+  .choose-card:hover h3, .choose-card:hover p {
+    color: #ffffff;
+  }
+  
+  /* Why Choose Section CSS End */
+  /* Counter CSS Start */
+.counter-section {
+    background: #010c29;
+  }
+  
+  .counter-section .counter-text i {
+    color: #fd1616;
+    font-size: 60px;
+  }
+  
+  .counter-section .counter-text h2 {
+    color: #ffffff;
+    margin-bottom: 0;
+  }
+  
+  /* Counter CSS End */
+  /* Testimonial CSS Strat */
+.testimonial-slider-two .testimonial-items .testimonial-text {
+    background: #feebe6;
+    padding: 50px;
+    margin: 0 0 25px 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .testimonial-slider-two .testimonial-items .testimonial-text i {
+    color: #fd987f;
+    font-size: 30px;
+    margin-bottom: 20px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .testimonial-slider-two .testimonial-items .testimonial-text p {
+    color: #001935;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .testimonial-slider-two .testimonial-items .testimonial-info-text h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .testimonial-slider-two .testimonial-items .testimonial-info-text p {
+    font-size: 16px;
+    color: #707070;
+    margin-bottom: 0;
+  }
+  
+  .testimonial-slider-two .testimonial-items:hover .testimonial-text {
+    background: #fd1616;
+  }
+  
+  .testimonial-slider-two .testimonial-items:hover .testimonial-text i, .testimonial-slider-two .testimonial-items:hover .testimonial-text p {
+    color: #ffffff;
+  }
+  
+  .testimonial-slider-two .owl-prev, .testimonial-slider-two .owl-next {
+    background: #f8cbc0 !important;
+    color: #ffffff !important;
+    font-size: 22px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50px !important;
+    line-height: 42px !important;
+    text-align: center;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  .testimonial-slider-two .owl-prev:hover, .testimonial-slider-two .owl-next:hover {
+    background: #fd1616 !important;
+    color: #ffffff !important;
+  }
+  
+  .testimonial-slider-two .owl-nav {
+    margin-top: 20px !important;
+  }
+  
+  /* Testimonial CSS End */
+  /* Blog CSS Start */
+.blog-card {
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    margin-bottom: 30px;
+  }
+  
+  .blog-card .blog-img {
+    overflow: hidden;
+  }
+  
+  .blog-card .blog-img img {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  .blog-card .blog-text {
+    padding: 25px;
+  }
+  
+  .blog-card .blog-text ul {
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .blog-card .blog-text ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  
+  .blog-card .blog-text ul li i {
+    color: #fd1616;
+    margin-right: 2px;
+  }
+  
+  .blog-card .blog-text h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .blog-card .blog-text h3 a {
+    color: #001935;
+  }
+  
+  .blog-card .blog-text h3 a:hover {
+    color: #fd1616;
+  }
+  
+  .blog-card .blog-text p {
+    margin-bottom: 10px;
+  }
+  
+  .blog-card .blog-text .blog-btn {
+    color: #fd1616;
+    font-size: 16px;
+  }
+  
+  .blog-card .blog-text .blog-btn:hover {
+    color: #001935;
+  }
+  
+  .blog-card .blog-text .blog-btn i {
+    top: 2px;
+    position: relative;
+  }
+  
+  .blog-card:hover .blog-img img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
+  /* Blog CSS End */
+  /*---------- Candidates Page CSS Start ----------*/
+
+.candidate-card {
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+}
+
+.candidate-card .candidate-img img {
+  width: 100%;
+}
+
+.candidate-card .candidate-text {
+  text-align: center;
+  padding: 15px 10px;
+  border-bottom: 1px dashed #ddd;
+  margin-top: -45px;
+  z-index: 1;
+  background: #ffffff;
+  position: relative;
+}
+
+.candidate-card .candidate-text h3 {
+  margin-bottom: 5px;
+}
+
+.candidate-card .candidate-text h3 a {
+  color: #001935;
+}
+
+.candidate-card .candidate-text h3 a:hover {
+  color: #fd1616;
+}
+
+.candidate-card .candidate-text ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.candidate-card .candidate-text ul li {
+  list-style: none;
+  font-size: 16px;
+}
+
+.candidate-card .candidate-social {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.candidate-card .candidate-social a i {
+  border: 1px solid #fd1616;
+  color: #fd1616;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.candidate-card .candidate-social a i:hover {
+  background: #001935;
+  color: #ffffff;
+}
+
+/*---------- Candidates Page CSS End ----------*/
+/* Candidate CSS Start */
+.condidate-item {
+  text-align: center;
+  max-width: 300px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.condidate-item .candidate-img {
+  border-radius: 10px;
+}
+
+.condidate-item .candidate-img img {
+  border-radius: 10px;
+}
+
+.condidate-item .candidate-social {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.condidate-item .candidate-social a i {
+  background: #fd1616;
+  color: #ffffff;
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  line-height: 35px;
+  margin: 0 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.condidate-item .candidate-social a i:hover {
+  background: #001935;
+}
+
+.condidate-item .candidate-text {
+  background: #ffffff;
+  position: absolute;
+  bottom: -98px;
+  left: 0;
+  right: 0;
+  max-width: 95%;
+  margin: auto;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.condidate-item .candidate-text h3 {
+  margin-bottom: 15px;
+}
+
+.condidate-item .candidate-text h3 a {
+  color: #001935;
+}
+
+.condidate-item .candidate-text ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.condidate-item .candidate-text ul li {
+  list-style: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.condidate-item .candidate-text ul li:last-child {
+  margin-bottom: 0;
+}
+
+.condidate-item .candidate-text .bottom-text {
+  border-top: 1px dashed #e2caca;
+  margin-top: 14px;
+  padding: 14px 0 0;
+  line-height: 1;
+}
+
+.condidate-item .candidate-text .bottom-text p {
+  margin-bottom: 0;
+  font-size: 16px;
+  float: left;
+}
+
+.condidate-item .candidate-text .bottom-text p i {
+  font-size: 18px;
+  top: 3px;
+  position: relative;
+}
+
+.condidate-item .candidate-text .bottom-text a {
+  float: right;
+}
+
+.condidate-item .candidate-text .bottom-text a i {
+  color: #fd1616;
+  border: 1px dashed #fd1616;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50px;
+}
+
+.condidate-item .candidate-text .bottom-text a i:hover {
+  background: #fd1616;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.condidate-item:hover .candidate-social {
+  bottom: 120px;
+}
+
+.condidate-item:hover .candidate-text h3 a {
+  color: #fd1616;
+}
+
+.condidate-slider .owl-dots {
+  line-height: 1;
+  margin-top: 25px !important;
+}
+
+.condidate-slider .owl-dots .owl-dot span {
+  background: #fdc8bb !important;
+  margin: 0 5px;
+}
+
+.condidate-slider .owl-dots .owl-dot.active span {
+  background: #fd1616 !important;
+}
+
+/* Candidate CSS End */
+  /*---------- About Page CSS End ----------*/

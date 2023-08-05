@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    {% embed "_dashboardProfil.html.twig" %}
+
+        {% block extra_content %}
+    
+            <section class="account-section ptb-100">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="account-details">
+
+                            <form id="edit" >
+                                <div class="text-center mt-4 mb-4">
+                                    <h1 class="text-center mt-4 mb-4">Votre profil</h1>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Votre nom</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="titleProfil" value="{{ profil.titleProfil }}" readonly>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Votre description</h3>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="descriptionProfil" rows="3" readonly>{{ profil.descriptionProfil }}</textarea>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Votre localisation</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="locationProfil" value="{{ profil.locationProfil }}" readonly>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Vos expériences</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="experienceYear" value="{{ profil.experienceYear }}" readonly>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Vos compétences</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="skills" value="{{ profil.skills }}" readonly>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Votre niveau d'étude</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="education" value="{{ profil.education }}" readonly>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Langues parlées</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="language" value="{{ profil.language }}" readonly>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Votre date de naissance</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="birthDay" value="{{ profil.birthDay ? profil.birthDay|date('Y-m-d') : '' }}" readonly>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Votre zone géographique (km)</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="mobility" value="{{ profil.mobility }}" readonly>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Votre image</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="document" value="{{ profil.poster }}" readonly>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h3>Votre CV</h3>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="poster" value="{{ profil.document }}" readonly>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <a  class="btn" style="background-color: #001935; color:white;" href="{{ path('app_profil_edit', {slug: profil.slug}) }}">Modifier votre profil</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                                {{ include('profil/_delete_form.html.twig')}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+
+    {% endembed %}
+
+{% endblock %}

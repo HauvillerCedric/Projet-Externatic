@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos entreprises partenaires{% endblock %}
+
+{% block body %}
+        <!-- Page Title Start -->
+        <section class="page-title title-bg9">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <h2>Entreprises</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Accueil</a>
+                        </li>
+                        <li>Entreprises</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </section>
+        <!-- Page Title End -->
+
+		<!-- Companies Section Start -->
+		<section class="company-section company-style-two pt-100 pb-70">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>Nos entreprises partenaires</h2>
+					<p> Notre entreprise se spécialise dans le recrutement et 
+                    la mise à disposition de professionnels du numérique. 
+                    Nous collaborons avec plusieurs entreprises partenaires 
+                    afin de répondre à leurs besoins en matière de ressources 
+                    humaines et de compétences techniques.</p>
+				</div>
+                {% if company is empty %}
+                <p>Aucune entreprise n'est trouvée.</p>
+                {% else %}
+				<div class="row">
+                {% for company in company %}
+					<div class="col-lg-3 col-sm-6">
+						<div class="company-card">
+							<div class="company-logo">
+                                <a href="#">
+                                    <img src="{{ vich_uploader_asset(company) }}" alt="{{ company.name }}" class=" img-fluide square">
+                                </a>
+							</div>
+							<div class="company-text">
+								<h3>{{company.name}}</h3>
+								<p>
+									<i class='bx bx-location-plus'></i>
+									{{company.location}}
+								</p>
+                                {% if company.slug is defined and company.slug %}
+								<a href="{{ path('app_company_show', {slug: company.slug}) }}" class="company-btn">
+									voir plus
+								</a>
+                                {% endif %}
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+                </div>
+                <div class="nagigation d-flex pagination justify-content-center">{{ knp_pagination_render(company) }}</div>
+             {% endif %}
+			</div>
+		</section>
+        {% if is_granted("ROLE_ENTREPRISE") %}
+		<!-- Companies Section End -->
+        <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_profil_company_new') }}">Enregistrer votre entreprise</a></button>
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle entreprise{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-4 mb-4">Enregistrer votre entreprise</h1>
+
+    {{ include('company/_form.html.twig') }} 
+
+    <button class="btn m-3" type="submit" style="background-color: #001935; color:white;"><a href="{{ path('app_company') }}">Retour</a></button>
+    
+{% endblock %}

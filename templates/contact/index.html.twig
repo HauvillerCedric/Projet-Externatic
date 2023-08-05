@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block body %}
+<!-- Page Title Start -->
+        <section class="page-title title-bg23">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <h2>Contactez-nous</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Acceuil</a>
+                        </li>
+                        <li>Contactez-nous</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </section>
+        <!-- Page Title End -->
+         {% if error %}
+        <div class="container mt-4">
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        </div>
+        {% elseif success %}
+        <div class="container mt-4">
+            <div class="alert alert-success" role="alert">
+                {{ success }}
+            </div>
+        </div>
+    {% endif %}
+ <!-- Contact Section Start -->
+        <div class="contact-card-section ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="contact-card">
+                                    <i class='bx bx-phone-call'></i>
+                                    <ul>
+                                        <li>
+                                            <a href="tel:+33 (0)2 85 52 26 33">
+                                                +33 (0)2 85 52 26 33
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-4 col-sm-6">
+                                <div class="contact-card">
+                                    <i class='bx bx-mail-send' ></i>
+                                    <ul>
+                                        <li>
+                                            <a href="mailto:contact@externatic.fr">
+                                                contact@externatic.fr
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-4 col-sm-6 offset-sm-3 offset-md-0">
+                                <div class="contact-card">
+                                    <i class='bx bx-location-plus' ></i>
+                                    <ul>
+                                        <li>
+                                            1 rue Racine – 44000 NANTES
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Section End -->
+
+        <!-- Contact Form Start -->
+        <section class="contact-form-section pb-100">
+            <div class="container">
+                <div class="contact-area">
+                    <h3>Pour échanger avec nous!</h3>
+                    <form id="contactForm"  method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Votre nom">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Votre Email">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" name="phone" id="phone" class="form-control" required data-error="Please enter your number" placeholder="Votre numéro de téléphone">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                   <select name="subject" id="subject" class="form-control" required data-error="Please choose a subject">
+                                    <option value="" disabled selected>Choisissez un sujet</option>
+                                    {% for subject in subjects %}
+                                    <option value="{{ subject.id }}">{{ subject.name }}</option>
+                                    {% endfor %}
+                                    </select>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea name="description" class="form-control message-field" id="description" cols="30" rows="7" required data-error="Please type your message" placeholder="Votre message"></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <button type="submit" class="default-btn contact-btn">
+                                    Envoyez
+                                </button>
+                                <div id="msgSubmit" class="h3 alert-text text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Form End -->
+
+
+
+
+{% endblock %}
