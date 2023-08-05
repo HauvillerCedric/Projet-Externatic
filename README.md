@@ -1,104 +1,118 @@
-# Project 3 - Starter Kit - Symfony
+# Projet - Externatic
 
-Project Description
-This website is designed to allow candidates to search and apply for job offers in the field of IT. Users willing to apply can register, connect and bookmark offers. Candidates can upload CV, update their profile and locate offers on a map depending on their home and mobility.
+Le projet ExternaticCe site web est conçu pour permettre aux candidats de rechercher et de postuler à des offres d'emploi dans le domaine de l'informatique. Les utilisateurs souhaitant postuler peuvent s'inscrire, se connecter et mettre en favoris des offres. Les candidats peuvent  mettre à jour leur profil dans un espace dédié.
+Les consultants d'Externatic peuvent accéder aux offres d'emploi et vérifier les données des candidats afin de trouver la meilleure correspondance.
 
-Externatic's consultants can reach job offers and check candidates' data in order to find the best match.
+L'administrateur peut entièrement gérer le site web grâce à des pages dédiées qui permettent la création, la mise à jour et la suppression de candidats, de consultants, d'entreprises et d'offres d'emploi.
 
-Admin can fully manage the website with dedicated pages that allows creation, update and deletion of candidates, consultants, companies and job offers.
+## **Développement**
+
+Il s'agit du deuxième projet de formation créé au sein de la Wild Code School pour la fin de formation. C'est un travail collaboratif réalisé par 5 personnes. Il vise à mettre en application les connaissances acquises en back-end, principalement en PHP, tout en mettant en pratique l'utilisation du framework Symfony.
+
+## **Critères**
+
+Plusieurs critères ont été imposés pour le projet :
+
+* Durée de la réalisation : 2 semaines.
+* 100% responsive.
+* Utilisation d'un wireframe (Figma).
+* Réalisation d'un bakclog (Trello).
+* Utilisation de la méthode simple MVC.
+* Utilisation de la méthode agile.
+* Base de données : modèle logique des données (MLD) avec utilisation de MySQL.
+* HTML/CSS.
+* PHP.
+* Symfony
+* GIT
+
+## **Réalisation individuelle**
+
+Pour ce projet, j'ai réalisé plusieurs foncfionnalités, les validation et les éléments de sécurités du site.
+Ce fichier n'a que vocation à présenter la possibilité d'envoyer un email.
+Dans un premier temps, pour la partie front-end, j'ai réalisé l'intégralité de la page contact.
+
+*Voici le formulaire de contact en version desktop*
+<p align="center">
+<a href="https://ibb.co/gdK1dXm"><img src="https://i.ibb.co/bF9hFyQ/Page-Contact-site.png" alt="Page-Contact-site" border="0"></a>
+</p>
+
+*Voici le formulaire de contact en version mobile*
+
+<p align="center">
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/k2Xxtm8/mobile3.png" alt="mobile3" border="0"></a>
+</p>
+
+Dans un second temps, j'ai réalisé toute partie back-end pour permettre l'envoi du mail. 
+
+## **Réalisation collective**
+
+Les tâches suivantes ont été effectuées en collaboration avec le groupe :
+* Élaboration du StyleGuide.
+* Réalisation de la base de données.
+* Inscription des utilisateurs.
+* Connexion des utilisateurs.
+* Dépot des offres.
+* Mise en favoris des offres pour les utilisateurs inscrits.
+
+## **Réalisation des autres membres**
+
+Le travail collectif a été une réussite et a permis la réalisation des fonctionnalités suivantes :
+
+* Création des comptes entreprises.
+* Réalisation de 3 dashboard : Entreprise, Candidat et Admin.
+* Réinitialisation du mot de passe de connexion.
+* Partie front-end des autres pages de l'application.
+
+## **Technologies**
+
+Les technologies utilisées sont :
+
+* HTML.
+* CSS.
+* JavaScript.
+* GIT.
+* TWIG.
+* PHP.
+* Workbench.
+* Trello.
+* MYsql.
+* Composer.
+* Symfony.
+* SAAS.
+* et différentes librairires.
+
+<hr>
+<p align="center" style="font-size: 24px;">
+  <strong>Pour une meilleure visualisation, n'hésitez pas à télécharger le projet!!</strong>
+</p>
+
+<hr>
+### Prérequis
+
+1. Vérifiez que Composer est installé.
+2. Vérifiez que Yarn et Node sont installés.
+
+### Installation
+
+1. Clonez ce projet.
+2. Exécutez `composer install`.
+3. Exécutez `yarn install`.
+4. Exécutez `yarn encore dev` pour générer les ressources.
+
+### Fonctionnement
+
+1. Exécutez `symfony server:start` pour démarrer votre serveur web local PHP.
+2. Exécutez  `yarn run dev --watch`pour démarrer votre serveur local pour les ressources (ou `yarn dev-server`fait la même chose avec le rechargement).
+
+### Création du fichier .env.local
+
+1. A la racine du projet, creez un fichier .env.local.
+2. configurez votre base de données et le DSN de votre boite mail.
 
 
-## TEAM
+## **Contact**
+* [Github](https://github.com/HauvillerCedric)
+* [Linkedin](https://www.linkedin.com/in/c%C3%A9dric-hauviller-970518272)
+* Adresse email : hauviller.cedric@gmail.com
 
-@AndressaaRibeiro
-@FouadTebi
-@Roger0753
-@HauvillerCedric
-@Sebus07
-
-
-### Prerequisites
-
-1. Check composer is installed
-2. Check yarn & node are installed
-
-### Install
-
-1. Clone this project
-2. Run `composer install`
-3. Run `yarn install`
-4. Run `yarn encore dev` to build assets
-
-### Working
-
-1. Run `symfony server:start` to launch your local php web server
-2. Run `yarn run dev --watch` to launch your local server for assets (or `yarn dev-server` do the same with Hot Module Reload activated)
-
-### Windows Users
-
-If you develop on Windows, you should edit you git configuration to change your end of line rules with this command:
-
-`git config --global core.autocrlf true`
-
-The `.editorconfig` file in root directory do this for you. You probably need `EditorConfig` extension if your IDE is VSCode.
-
-### Run locally with Docker
-
-1. Fill DATABASE_URL variable in .env.local file with
-`DATABASE_URL="mysql://root:password@externatic:3306/<choose_a_db_name>"`
-2. Install Docker Desktop an run the command:
-```bash
-docker-compose up -d
-```
-3. Wait a moment and visit http://localhost:8000
-
-
-## Deployment
-
-Some files are used to manage automatic deployments (using tools as Caprover, Docker and Github Action). Please do not modify them.
-
-* [Dockerfile](/Dockerfile) Web app configuration for Docker container
-* [docker-entry.sh](/docker-entry.sh) shell instruction to execute when docker image is built
-* [nginx.conf](/ginx.conf) Nginx server configuration
-* [php.ini](/php.ini) Php configuration
-
-
-## Built With
-
-* [Symfony](https://github.com/symfony/symfony)
-* [GrumPHP](https://github.com/phpro/grumphp)
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* [PHPStan](https://github.com/phpstan/phpstan)
-* [PHPMD](http://phpmd.org)
-* [ESLint](https://eslint.org/)
-* [Sass-Lint](https://github.com/sasstools/sass-lint)
-
-
-
-
-## License
-
-MIT License
-
-Copyright (c) 2019 aurelien@wildcodeschool.fr
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-## Acknowledgments
 
