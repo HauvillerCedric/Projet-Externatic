@@ -1,6 +1,6 @@
 # Projet - Externatic
 
-Le projet ExternaticCe site web est conçu pour permettre aux candidats de rechercher et de postuler à des offres d'emploi dans le domaine de l'informatique. Les utilisateurs souhaitant postuler peuvent s'inscrire, se connecter et mettre en favoris des offres. Les candidats peuvent  mettre à jour leur profil dans un espace dédié.
+Le projet Externatic est conçu pour permettre aux candidats de rechercher et de postuler à des offres d'emploi dans le domaine de l'informatique. Les utilisateurs souhaitant postuler peuvent s'inscrire, se connecter et mettre en favoris des offres. Les candidats peuvent  mettre à jour leur profil dans un espace dédié.
 Les consultants d'Externatic peuvent accéder aux offres d'emploi et vérifier les données des candidats afin de trouver la meilleure correspondance.
 
 L'administrateur peut entièrement gérer le site web grâce à des pages dédiées qui permettent la création, la mise à jour et la suppression de candidats, de consultants, d'entreprises et d'offres d'emploi.
@@ -87,24 +87,25 @@ Les technologies utilisées sont :
 </p>
 
 <hr>
-### Prérequis
+
+### **Prérequis**
 
 1. Vérifiez que Composer est installé.
 2. Vérifiez que Yarn et Node sont installés.
 
-### Installation
+### **Installation**
 
 1. Clonez ce projet.
 2. Exécutez `composer install`.
 3. Exécutez `yarn install`.
 4. Exécutez `yarn encore dev` pour générer les ressources.
 
-### Fonctionnement
+### **Fonctionnement**
 
 1. Exécutez `symfony server:start` pour démarrer votre serveur web local PHP.
 2. Exécutez  `yarn run dev --watch`pour démarrer votre serveur local pour les ressources (ou `yarn dev-server`fait la même chose avec le rechargement).
 
-### Création du fichier .env.local
+### **Création du fichier .env.local**
 
 1. A la racine du projet, creez un fichier .env.local.
 2. configurez votre base de données et le DSN de votre boite mail.
